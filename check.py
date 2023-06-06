@@ -2,12 +2,15 @@
 import cv2
 from keras.models import load_model
 import numpy as np
+
+# Load the computer vision model
 model = load_model('keras_model.h5', compile = False)
 
-cap = cv2.VideoCapture(0)
-float_formatter = "{:.2f}".format
+# Load the labels
+class_names = open("labels.txt", "r").readlines()
 
-data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.formatter={'float_kind': float_formatter}
+cap = cv2.VideoCapture(0)
+data = np.ndarray(shape=(1, 224, 224, 3), dtype=np.float32)
 print(data)
 
 #%%
@@ -18,12 +21,14 @@ while True:
     normalized_image = (image_np.astype(np.float32) / 127.0) - 1 # Normalize the image
     data[0] = normalized_image
     prediction = model.predict(data)
+    index = np.argmax(prediction)
+    class_name = class_names[index]
+    print(f' You chose {class_name} ')
     cv2.imshow('frame', frame)
     # Press q to close the window
     print(prediction)
     if cv2.waitKey(1) & 0xFF == ord('q'):
         break
-
 #%%          
 # After the loop release the cap object
 cap.release()

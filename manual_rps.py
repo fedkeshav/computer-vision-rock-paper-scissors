@@ -1,9 +1,8 @@
 #%%
 import random
-choice_list = ['Rock', 'Paper', 'Scissors']
 
 def  get_computer_choice():
-    comp_choice= random.choice(choice_list)
+    comp_choice= random.choice(['Rock', 'Paper', 'Scissors'])
     return comp_choice
 
 def get_user_choice():
@@ -22,7 +21,7 @@ def get_winner(computer_choice, user_choice):
 
 #%%
 def play():
-     computer_choice = get_computer_choice()
+     computer_choice = get_computer_choice(choice_list)
      user_choice = get_user_choice()
      get_winner(computer_choice,user_choice)
      print(f'Computer chose {computer_choice} and User chose {user_choice}')
