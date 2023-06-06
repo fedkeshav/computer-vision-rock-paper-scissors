@@ -112,14 +112,14 @@ class Rps_Game():
         if (computer_choice == 'Rock' and user_choice == 'Scissors') or \
            (computer_choice == 'Scissors' and user_choice == 'Paper') or \
            (computer_choice == 'Paper' and user_choice == 'Rock'):
-            print('Computer wins')
+            print('You lost')
             self.computer_score += 1
             self.game_count += 1
         elif computer_choice == user_choice or user_choice == 'Nothing':
             print('It is a tie')
             self.game_count += 1
         else:
-            print('User wins')
+            print('You won')
             self.user_score += 1
             self.game_count += 1
 
