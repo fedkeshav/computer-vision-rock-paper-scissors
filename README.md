@@ -33,4 +33,3 @@ The `Rps_Game` class has nine methods.
 ## Ideas to improve the game further
 - Keep scores on top left, and game/round number on top right always
 - Nothing should be printed in command line. Print everything to screen including user choice, computer choice and result of the game
-- 
