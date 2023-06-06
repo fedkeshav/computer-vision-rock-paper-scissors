@@ -50,7 +50,7 @@ class Rps_Game():
     def screen_text_inputs(self):
         '''
         Provides the main inputs everytime we want to print text to screen.
-        It is called on by otherfunctions
+        It is called on by other functions
 
         Returns:
             List of inputs needed for printing text to screen
@@ -112,14 +112,14 @@ class Rps_Game():
         if (computer_choice == 'Rock' and user_choice == 'Scissors') or \
            (computer_choice == 'Scissors' and user_choice == 'Paper') or \
            (computer_choice == 'Paper' and user_choice == 'Rock'):
-            print('COMPUTER WINS')
+            print('Computer wins')
             self.computer_score += 1
             self.game_count += 1
         elif computer_choice == user_choice or user_choice == 'Nothing':
-            print('IT IS A TIE')
+            print('It is a tie')
             self.game_count += 1
         else:
-            print('USER WINS')
+            print('User wins')
             self.user_score += 1
             self.game_count += 1
 
